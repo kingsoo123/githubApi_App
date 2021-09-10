@@ -7,10 +7,8 @@ import ShowList from './ShowList'
 const Search = ()=>{
     const [username, setUsername] = useState('')
     const [list, setList] = useState([])
-console.log(list)
     const SearchUser = ()=>{
         axios.get(`https://api.github.com/users/${username}/repos`).then(res=>{
-            //console.log(res?.data)
         setList(res?.data)
         }).catch(error=>{console.log(error)})
     }
