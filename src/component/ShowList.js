@@ -2,10 +2,15 @@ import React, {useState, useEffect} from 'react'
 
 import styled from 'styled-components'
 function ShowList({list}) {
+
+    const [forks, setForks] = useState(0)
+    const [language, setLanguage] = useState('')
+
+  
     const showList = list.map((url, id)=>{
         return(
           <div key={id}>
-          <li style={{ padding: 5, borderRadius:5, border: '1px solid grey'}}>{url?.git_url}</li>
+          <li style={{ padding: 5, borderRadius:5, border: '1px solid grey'}} onClick={()=>{setForks(url?.forks); setLanguage(url?.language)}}>{url?.git_url}</li>
           </div>
         )})
   return (
@@ -15,8 +20,8 @@ function ShowList({list}) {
   </Ul>
   <Stats>
   <p style={{fontSize: 24, fontWeight:'bold', borderRadius:5, border: '1px solid grey', padding: 10, cursor:'none'}}>Statistics:</p>
-  <li>Nos of Forks: </li>
-  <li>Language used: </li>
+  <li>Nos of Forks: {forks}</li>
+  <li>Language used: {language}</li>
   </Stats>
     </Container>
   );
