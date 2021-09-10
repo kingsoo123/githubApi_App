@@ -10,7 +10,7 @@ function ShowList({list}) {
     const showList = list.map((url, id)=>{
         return(
           <div key={id}>
-          <li style={{ padding: 5, borderRadius:5, border: '1px solid grey'}} onClick={()=>{setForks(url?.forks); setLanguage(url?.language); setName(url?.name)}}>{url?.git_url}</li>
+          <li style={{ padding: 5, borderRadius:5, border: '1px solid grey'}} onClick={()=>{setForks(url?.forks); setLanguage(url?.language); setName(url?.name)}}>{url?.git_url}</li><br/>
           </div>
         )})
   return (
