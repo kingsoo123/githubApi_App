@@ -49,6 +49,12 @@ const Ul = styled.ul`
 width: 40%;
 list-style-type: none;
 cursor:pointer;
+
+@media (max-width: 952px) {
+    width: 100%;
+list-style-type: none;
+cursor:pointer;
+    }
 `;
 
 const Stats = styled.ul`
